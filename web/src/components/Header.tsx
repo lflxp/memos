@@ -70,6 +70,12 @@ const Header = () => {
     title: t("common.settings"),
     icon: <Icon.Settings className="mr-3 w-6 h-auto opacity-70" />,
   };
+  const toolNavLink: NavLinkItem = {
+    id: "header-tool",
+    path: "/tool",
+    title: t("common.tool"),
+    icon: <Icon.Swords className="mr-3 w-6 h-auto opacity-70" />,
+  };
   const authNavLink: NavLinkItem = {
     id: "header-auth",
     path: "/auth",
@@ -78,7 +84,7 @@ const Header = () => {
   };
 
   const navLinks: NavLinkItem[] = !isVisitorMode
-    ? [homeNavLink, dailyReviewNavLink, exploreNavLink, resourcesNavLink, archivedNavLink, settingNavLink]
+    ? [homeNavLink, dailyReviewNavLink, exploreNavLink, resourcesNavLink, archivedNavLink, toolNavLink, settingNavLink]
     : [exploreNavLink, authNavLink];
 
   return (

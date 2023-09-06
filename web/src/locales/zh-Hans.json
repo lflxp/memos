@@ -48,6 +48,7 @@
     "save": "保存",
     "select": "选择",
     "settings": "设置",
+    "tool": "开发工具",
     "share": "分享",
     "sign-in": "登录",
     "sign-in-with": "使用{{provider}}登录",
@@ -321,6 +322,12 @@
       "delete-member": "删除成员",
       "delete-warning": "❗您确定要删除 {{username}} 吗？\n\n此操作不可逆❗"
     },
+    "jwt": "JWT解析",
+    "json": "JSON格式化",
+    "md5": "Md5加密工具",
+    "time": "Unix时间转换",
+    "uuid": "UUID生成器",
+    "base64": "Base64解析",
     "my-account": "我的账号",
     "preference": "偏好设置",
     "preference-section": {

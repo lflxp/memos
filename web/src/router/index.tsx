@@ -17,6 +17,7 @@ const UserProfile = lazy(() => import("@/pages/UserProfile"));
 const MemoDetail = lazy(() => import("@/pages/MemoDetail"));
 const EmbedMemo = lazy(() => import("@/pages/EmbedMemo"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const Tool = lazy(() => import("@/pages/Tool"));
 
 const initialGlobalStateLoader = (() => {
   let done = false;
@@ -163,6 +164,26 @@ const router = createBrowserRouter([
       {
         path: "setting",
         element: <Setting />,
+        loader: async () => {
+          await initialGlobalStateLoader();
+
+          try {
+            await initialUserState();
+          } catch (error) {
+            // do nth
+          }
+
+          const { user } = store.getState().user;
+
+          if (isNullorUndefined(user)) {
+            return redirect("/auth");
+          }
+          return null;
+        },
+      },
+      {
+        path: "tool",
+        element: <Tool />,
         loader: async () => {
           await initialGlobalStateLoader();
 
