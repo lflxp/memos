@@ -15,18 +15,20 @@
 FROM golang:1.21-alpine AS backend
 WORKDIR /backend-build
 
+ENV GOPROXY="https://goproxy.cn"
+
 COPY . .
 # COPY --from=frontend /frontend-build/dist ./server/dist
-COPY web/dist ./server/dist
+# COPY web/dist ./server/dist
 
-RUN CGO_ENABLED=0 go build -o memos ./main.go
+RUN CGO_ENABLED=0 go build -mod=vendor -o memos ./main.go
 
 # Make workspace with above generated files.
 FROM alpine:latest AS monolithic
 WORKDIR /usr/local/memos
 
 RUN apk add --no-cache tzdata
-ENV TZ="UTC"
+ENV TZ="Asia/Shanghai"
 
 COPY --from=backend /backend-build/memos /usr/local/memos/
 
