@@ -3,7 +3,7 @@ import { Base64 } from "js-base64";
 import React, { PureComponent } from "react";
 
 const { TextArea } = Input;
-class B6 extends PureComponent {
+class B6 extends PureComponent<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ class B6 extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">原文</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <TextArea showCount maxLength={100000} rows={10} onChange={this.onChange} />
               </Card>
@@ -40,7 +40,7 @@ class B6 extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">解码</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <TextArea showCount maxLength={100000} value={this.state.data} />
               </Card>

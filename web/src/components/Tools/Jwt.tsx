@@ -5,7 +5,7 @@ import React, { PureComponent } from "react";
 import ReactJson from "react-json-view";
 
 const { TextArea } = Input;
-class Jwt extends PureComponent {
+class Jwt extends PureComponent<any, any> {
   constructor(_props: any) {
     super(_props);
     this.state = {
@@ -30,7 +30,7 @@ class Jwt extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">原文</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <TextArea showCount rows={10} maxLength={100000} placeholder="jwt复制到这里" onChange={this.onChange} />
               </Card>
@@ -40,7 +40,7 @@ class Jwt extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">解码</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <ReactJson src={this.state.data} />
               </Card>

@@ -2,12 +2,12 @@ import { Option, Select } from "@mui/joy";
 import { useState } from "react";
 import Icon from "@/components/Icon";
 import MobileHeader from "@/components/MobileHeader";
+import Base64 from "@/components/Tools/Base64";
 import JsonFormat from "@/components/Tools/Json";
 import Jwt from "@/components/Tools/Jwt";
 import Md5 from "@/components/Tools/Md5";
 import Time from "@/components/Tools/Time";
 import UUID from "@/components/Tools/Uuid";
-import Base64 from "@/components/Tools/Base64";
 import { useUserStore } from "@/store/module";
 import { useTranslate } from "@/utils/i18n";
 import "@/less/setting.less";
@@ -69,7 +69,7 @@ const Tool = () => {
           </div>
           {isHost ? (
             <>
-              <span className="section-title">{t("common.admin")}</span>
+              <span className="section-title">{t("setting.create")}</span>
               <div className="section-items-container">
                 <span
                   onClick={() => handleSectionSelectorItemClick("md5")}

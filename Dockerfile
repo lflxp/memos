@@ -1,21 +1,23 @@
-# Build frontend dist.
-FROM node:18-alpine AS frontend
-WORKDIR /frontend-build
+# # Build frontend dist.
+# FROM node:18-alpine AS frontend
+# WORKDIR /frontend-build
 
-COPY ./web/package.json ./web/pnpm-lock.yaml ./
+# # COPY ./web/package.json ./web/pnpm-lock.yaml ./
 
-RUN corepack enable && pnpm i --frozen-lockfile
+# # RUN corepack enable && pnpm i --frozen-lockfile
 
-COPY ./web/ .
+# COPY ./web/ .
 
-RUN pnpm build
+# # RUN pnpm build
+# RUN npm i --force && npm run build
 
 # Build backend exec file.
 FROM golang:1.21-alpine AS backend
 WORKDIR /backend-build
 
 COPY . .
-COPY --from=frontend /frontend-build/dist ./server/dist
+# COPY --from=frontend /frontend-build/dist ./server/dist
+COPY web/dist ./server/dist
 
 RUN CGO_ENABLED=0 go build -o memos ./main.go
 

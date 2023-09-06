@@ -2,7 +2,7 @@ import { Row, Col, Divider, Card, Input } from "antd";
 import React, { PureComponent } from "react";
 
 const { TextArea } = Input;
-class Time extends PureComponent {
+class Time extends PureComponent<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ class Time extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">原文 {this.state.now}</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <TextArea showCount maxLength={999999} rows={10} onChange={this.onChange} />
               </Card>
@@ -34,7 +34,7 @@ class Time extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">解码</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <TextArea showCount maxLength={100000} rows={10} value={this.state.data} />
               </Card>

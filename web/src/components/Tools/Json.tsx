@@ -3,7 +3,7 @@ import React, { PureComponent } from "react";
 import ReactJson from "react-json-view";
 
 const { TextArea } = Input;
-class JsonFormat extends PureComponent {
+class JsonFormat extends PureComponent<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ class JsonFormat extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">原文</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <TextArea showCount maxLength={999999} rows={10} onChange={this.onChange} />
               </Card>
@@ -34,7 +34,7 @@ class JsonFormat extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">解码</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <ReactJson src={this.state.data} />
               </Card>

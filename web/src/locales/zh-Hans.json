@@ -328,6 +328,7 @@
     "time": "Unix时间转换",
     "uuid": "UUID生成器",
     "base64": "Base64解析",
+    "create": "生成器",
     "my-account": "我的账号",
     "preference": "偏好设置",
     "preference-section": {

@@ -3,7 +3,7 @@ import React, { PureComponent } from "react";
 import { v4 as uuid } from "uuid";
 
 const { TextArea } = Input;
-class UUID extends PureComponent {
+class UUID extends PureComponent<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ class UUID extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">结果</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <Slider defaultValue={30} onChange={this.onChange} />
               </Card>
@@ -34,7 +34,7 @@ class UUID extends PureComponent {
         <Row gutter={16}>
           <Col span={24}>
             <Divider orientation="left">结果</Divider>
-            <div style={{ width: "900px" }}>
+            <div style={{ width: "600px" }}>
               <Card bordered={false}>
                 <TextArea showCount maxLength={100000} rows={10} value={this.state.data} />
               </Card>
